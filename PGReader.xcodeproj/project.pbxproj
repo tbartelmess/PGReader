@@ -14,6 +14,9 @@
 		93522C7D15EAE1F1009A9BB1 /* MCDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 93522C7C15EAE1F1009A9BB1 /* MCDocument.m */; };
 		93522C8015EAE1F1009A9BB1 /* MCDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93522C7E15EAE1F1009A9BB1 /* MCDocument.xib */; };
 		93522C8315EAE1F1009A9BB1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93522C8115EAE1F1009A9BB1 /* MainMenu.xib */; };
+		93522C8C15EAE264009A9BB1 /* MCPGDataFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93522C8B15EAE264009A9BB1 /* MCPGDataFile.m */; };
+		93522C8F15EAE4E3009A9BB1 /* MCPGDataPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 93522C8E15EAE4E3009A9BB1 /* MCPGDataPage.m */; };
+		93522C9615EB0F0A009A9BB1 /* MCPGHeapTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 93522C9515EB0F09009A9BB1 /* MCPGHeapTuple.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,13 @@
 		93522C7C15EAE1F1009A9BB1 /* MCDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCDocument.m; sourceTree = "<group>"; };
 		93522C7F15EAE1F1009A9BB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MCDocument.xib; sourceTree = "<group>"; };
 		93522C8215EAE1F1009A9BB1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		93522C8915EAE207009A9BB1 /* PGReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PGReader.entitlements; sourceTree = "<group>"; };
+		93522C8A15EAE264009A9BB1 /* MCPGDataFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPGDataFile.h; sourceTree = "<group>"; };
+		93522C8B15EAE264009A9BB1 /* MCPGDataFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPGDataFile.m; sourceTree = "<group>"; };
+		93522C8D15EAE4E3009A9BB1 /* MCPGDataPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPGDataPage.h; sourceTree = "<group>"; };
+		93522C8E15EAE4E3009A9BB1 /* MCPGDataPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPGDataPage.m; sourceTree = "<group>"; };
+		93522C9415EB0F09009A9BB1 /* MCPGHeapTuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPGHeapTuple.h; sourceTree = "<group>"; };
+		93522C9515EB0F09009A9BB1 /* MCPGHeapTuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPGHeapTuple.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +94,16 @@
 		93522C6F15EAE1F1009A9BB1 /* PGReader */ = {
 			isa = PBXGroup;
 			children = (
+				93522C8915EAE207009A9BB1 /* PGReader.entitlements */,
 				93522C7B15EAE1F1009A9BB1 /* MCDocument.h */,
 				93522C7C15EAE1F1009A9BB1 /* MCDocument.m */,
+				93522C8D15EAE4E3009A9BB1 /* MCPGDataPage.h */,
+				93522C8E15EAE4E3009A9BB1 /* MCPGDataPage.m */,
+				93522C8A15EAE264009A9BB1 /* MCPGDataFile.h */,
+				93522C8B15EAE264009A9BB1 /* MCPGDataFile.m */,
 				93522C7E15EAE1F1009A9BB1 /* MCDocument.xib */,
+				93522C9415EB0F09009A9BB1 /* MCPGHeapTuple.h */,
+				93522C9515EB0F09009A9BB1 /* MCPGHeapTuple.m */,
 				93522C8115EAE1F1009A9BB1 /* MainMenu.xib */,
 				93522C7015EAE1F1009A9BB1 /* Supporting Files */,
 			);
@@ -173,6 +190,9 @@
 			files = (
 				93522C7615EAE1F1009A9BB1 /* main.m in Sources */,
 				93522C7D15EAE1F1009A9BB1 /* MCDocument.m in Sources */,
+				93522C8C15EAE264009A9BB1 /* MCPGDataFile.m in Sources */,
+				93522C8F15EAE4E3009A9BB1 /* MCPGDataPage.m in Sources */,
+				93522C9615EB0F0A009A9BB1 /* MCPGHeapTuple.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +286,12 @@
 		93522C8715EAE1F1009A9BB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PGReader/PGReader.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PGReader/PGReader-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/PGReader/include/";
 				INFOPLIST_FILE = "PGReader/PGReader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -278,9 +301,12 @@
 		93522C8815EAE1F1009A9BB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PGReader/PGReader.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PGReader/PGReader-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/PGReader/include/";
 				INFOPLIST_FILE = "PGReader/PGReader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

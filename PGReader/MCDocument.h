@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+@class MCPGDataFile;
 @interface MCDocument : NSDocument
-
+@property (nonatomic, strong) MCPGDataFile * dataFile;
 @end
