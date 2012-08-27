@@ -7,7 +7,7 @@
 //
 
 #import "MCPGDataPage.h"
-
+#import "MCPGHeapTuple.h"
 @implementation MCPGDataPage
 - (id)initWithData:(NSData *)data {
     self = [self init];
@@ -45,9 +45,14 @@
         
        
         while (next4Bytes->lp_len != 0) {
-             NSLog (@"start: %u length: %u bytes", next4Bytes->lp_len, next4Bytes->lp_len);
+             NSLog (@"start: %u length: %u bytes", next4Bytes->lp_off, next4Bytes->lp_len);
+            MCPGHeapTuple * heapTuple = [[MCPGHeapTuple alloc] initWithData:[data subdataWithRange:NSMakeRange(next4Bytes->lp_off, next4Bytes->lp_len)]];
+            NSData * heapData = [data subdataWithRange:NSMakeRange(next4Bytes->lp_off, next4Bytes->lp_len)];
+            NSLog(@"%@", [[NSString alloc] initWithData:heapData encoding:NSASCIIStringEncoding]);
+            
             [data getBytes:next4Bytes range:NSMakeRange(currentPos, sizeof(ItemIdData))];
             currentPos += sizeof(ItemIdData);
+            
         }
         
     }
