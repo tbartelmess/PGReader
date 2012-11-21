@@ -41,6 +41,7 @@
         currentPos += sizeof(uint32);
         NSLog(@"%u", self.transactionID);
         
+
         // Reading item data id's
         ItemIdData * next4Bytes = malloc(sizeof(ItemIdData));
         
