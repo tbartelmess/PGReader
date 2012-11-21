@@ -20,6 +20,9 @@
         currentPos += sizeof(uint32);
         [data getBytes:&_pd_lsn_xlogid range:NSMakeRange(currentPos,sizeof(uint32))];
         currentPos += sizeof(uint32);
+
+
+
         [data getBytes:&_timeLineID range:NSMakeRange(currentPos,sizeof(uint32))];
         currentPos += sizeof(uint32);
         [data getBytes:&_pd_tli range:NSMakeRange(currentPos, sizeof(uint16))];
